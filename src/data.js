@@ -48,5 +48,5 @@ export const WORDS = [
   'ROYAL',
   'HONEY',
   'FLAKE',
-  'SOUND',
-];
+  'SOUND'
+]

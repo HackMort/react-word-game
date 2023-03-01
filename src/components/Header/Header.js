@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-function Header() {
+function Header () {
   return (
     <header>
       <h1>Word Game</h1>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header
