@@ -18,6 +18,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "env": {
+      "browser": false,
+      "node": true
+    },
     "extends": "./node_modules/standard/eslintrc.json"
   },
   "browserslist": {

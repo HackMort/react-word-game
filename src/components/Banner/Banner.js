@@ -7,7 +7,7 @@ function Banner ({ status, numberOfGuesses, answer }) {
     return (
       <>
         <div className='sad banner'>
-          <p>Sorry, the correct answer is <strong>{answer || 'TEST'}</strong>.</p>
+          <p>Sorry, the correct answer is <strong>{answer}</strong>.</p>
         </div>
       </>
     )
@@ -17,7 +17,7 @@ function Banner ({ status, numberOfGuesses, answer }) {
       <div className='happy banner'>
         <p>
           <strong>Congratulations!</strong> Got it in
-          <strong> {answer || '3'} guesses</strong>.
+          <strong> {numberOfGuesses <= 1 ? `${numberOfGuesses} guess` : `${numberOfGuesses} guesses`}</strong>.
         </p>
       </div>
     </>
