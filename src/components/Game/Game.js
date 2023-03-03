@@ -15,6 +15,7 @@ function Game () {
   // const [showBanner, setShowBanner] = React.useState(false)
   // running, won, lost.
   const [gameStatus, setGameStatus] = React.useState('running')
+  const [gameAnswer, setNewAnswer] = React.useState(answer)
   function handleNewGuessWord (guessWord) {
     const newWord = { id: Math.random(), word: guessWord }
     const newGuessesArray = [...guesses, newWord]
@@ -25,13 +26,24 @@ function Game () {
       setGameStatus('lost')
     }
   }
+  function handleRestart () {
+    setNewGuesses([])
+    setGameStatus('running')
+    const newAnswer = sample(WORDS)
+    setNewAnswer(newAnswer)
+  }
   return (
     <>
-      <GuessWordsList words={guesses} answer={answer} />
+      {gameStatus !== 'running' && (
+        <button className='restart-button' onClick={handleRestart}>Restart Game</button>
+      )}
+      <GuessWordsList words={guesses} answer={gameAnswer} />
       <Form handleNewGuessWord={handleNewGuessWord} gameStatus={gameStatus} />
       {gameStatus !== 'running' && (
-        <Banner status={gameStatus} numberOfGuesses={guesses.length} answer={answer} />
+        <Banner status={gameStatus} numberOfGuesses={guesses.length} answer={gameAnswer} />
+
       )}
+
     </>
   )
 }

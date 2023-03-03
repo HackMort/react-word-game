@@ -2,7 +2,7 @@ import React from 'react'
 
 function Banner ({ status, numberOfGuesses, answer }) {
   // const [showBanner, setShowBanner] = React.useState(false)
-  console.log('Status: ', status)
+  // console.log('Status: ', status)
   if (status === 'lost') {
     return (
       <>
